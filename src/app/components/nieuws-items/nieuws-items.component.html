@@ -1,0 +1,18 @@
+<p>
+  Alle nieuws items
+</p>
+
+<table>
+  <tr *ngFor="let nieuwsItem of nieuwsItems"
+      (click)="onSelect(nieuwsItem)">
+    <td>
+      "afbeelding"
+    </td>
+    <td>
+      {{nieuwsItem.titel}}
+    </td>
+    <td>
+      <button (click)="nieuwsItemsService.editNieuwsItem(nieuwsItem.id)">Edit</button>
+    </td>
+  </tr>
+</table>
