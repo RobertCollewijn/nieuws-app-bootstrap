@@ -9,12 +9,14 @@ import {NieuwsItemsService} from "./services/nieuws-items.service";
 import {NieuwsItemsComponent} from './components/nieuws-items/nieuws-items.component';
 import {routing} from "./app.router";
 import {NieuwsItemComponent} from './components/nieuws-item/nieuws-item.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NieuwsItemsComponent,
-    NieuwsItemComponent
+    NieuwsItemComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

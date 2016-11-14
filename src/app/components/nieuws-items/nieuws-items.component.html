@@ -1,6 +1,3 @@
-<p>
-  Alle nieuws items
-</p>
 
 <table>
   <tr *ngFor="let nieuwsItem of nieuwsItems"
@@ -12,7 +9,7 @@
       {{nieuwsItem.titel}}
     </td>
     <td>
-      <button (click)="nieuwsItemsService.editNieuwsItem(nieuwsItem.id)">Edit</button>
+
     </td>
   </tr>
 </table>
