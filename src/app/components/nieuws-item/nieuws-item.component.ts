@@ -3,6 +3,7 @@ import {NieuwsItemsService} from "../../services/nieuws-items.service";
 import {Router, ActivatedRoute} from "@angular/router";
 import {NieuwsItem} from "../../models/nieuws-item";
 import {Subscription} from "rxjs";
+import {FormGroup, Validators, FormBuilder, FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-nieuws-item',
@@ -15,7 +16,14 @@ export class NieuwsItemComponent implements OnInit {
   nieuwsItemId:string;
   nieuwsItem: NieuwsItem;
 
-  constructor(private router: Router, private route: ActivatedRoute,private nieuwsItemService: NieuwsItemsService) {
+  myForm: FormGroup;
+
+  constructor(fb: FormBuilder, private router: Router, private route: ActivatedRoute,private nieuwsItemService: NieuwsItemsService) {
+
+    this.myForm = fb.group({
+      titel: new FormControl(),
+      samenvattingOverzicht:new FormControl()
+    });
 
     setTimeout(()=> {
       this.paramsSub = route.params.subscribe(
@@ -25,6 +33,8 @@ export class NieuwsItemComponent implements OnInit {
         .subscribe(
           data => {
             this.nieuwsItem = data;
+
+
             console.log(data)
           },
           error => console.error(error)

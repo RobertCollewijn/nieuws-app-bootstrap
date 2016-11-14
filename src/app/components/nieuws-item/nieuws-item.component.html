@@ -1,3 +1,11 @@
 <h1> {{nieuwsItem?.titel}}</h1>
+<form [formGroup]="myForm" autocomplete="off" novalidate>
+  <label>Titel:</label>
+  <input type="text" class="form-control" formControlName="titel" value={{nieuwsItem?.titel}}>
+
+  <label>Samenvattig overzicht:</label>
+  <textarea type="textarea" class="form-control" formControlName="samenvattingOverzicht" rows="6" value={{nieuwsItem?.samenvattingOverzicht}}></textarea>
+
+</form>
 
 
