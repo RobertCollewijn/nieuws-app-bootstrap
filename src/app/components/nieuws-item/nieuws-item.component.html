@@ -1,11 +1,23 @@
-<h1> {{nieuwsItem?.titel}}</h1>
-<form [formGroup]="myForm" autocomplete="off" novalidate>
-  <label>Titel:</label>
-  <input type="text" class="form-control" formControlName="titel" value={{nieuwsItem?.titel}}>
+<h1>{{nieuwsItem?.titel}}</h1>
+
+<form [formGroup]="myForm" autocomplete="off" novalidate (ngSubmit)="bewaren()">
+  <div>
+    <label>Titel:</label>
+    <input type="text" class="form-control" formControlName="titel">
+    <small [hidden]="myForm.controls.titel.valid || (myForm.controls.titel.pristine && !submitted)">
+      Titel is verplicht (minimaal 5 tekens).
+    </small>
+  </div>
 
   <label>Samenvattig overzicht:</label>
-  <textarea type="textarea" class="form-control" formControlName="samenvattingOverzicht" rows="6" value={{nieuwsItem?.samenvattingOverzicht}}></textarea>
 
+  <textarea type="textarea" class="form-control" formControlName="samenvattingOverzicht" rows="6"></textarea>
+
+
+  <button class="btn btn-success" type="submit">Bewaren</button>
+  <button class="btn danger" (click)="deleteNieuwsItem()">Delete</button>
 </form>
+
+
 
 

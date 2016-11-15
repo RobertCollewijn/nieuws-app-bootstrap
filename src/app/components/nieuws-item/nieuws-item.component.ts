@@ -136,6 +136,21 @@ console.log("error: "+ error.statusText)
 
   }
 
+  deleteNieuwsItem(){
+    this.nieuwsItemService.deleteNieuwsItem(this.nieuwsItem.id.toLocaleString()).subscribe(
+      data => {
+        console.log(data);
+        this.router.navigate(['nieuwsItems']);
+        return true;
+      },
+      error => {
+        console.error("Error saving NieuwsItem!");
+
+        return Observable.throw(error);
+      }
+    );
+  }
+
 
   // check if model is valid
   // if valid, call API to save customer

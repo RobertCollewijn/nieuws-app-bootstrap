@@ -55,4 +55,13 @@ export class NieuwsItemsService {
     console.log(url);
     return this.http.put(url, body, options).map((res: Response) => res.json());
   }
+
+  deleteNieuwsItem(id:string){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    let url = "http://localhost:3000/nieuwsItems/"+id;
+    console.log(url);
+    return this.http.delete(url, options).map((res: Response) => res.json());
+  }
 }
