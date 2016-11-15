@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, URLSearchParams, Response} from "@angular/http";
+import {Http, URLSearchParams, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -30,7 +30,29 @@ export class NieuwsItemsService {
     return this.http.get(url).map((res: Response) => res.json());
   }
 
-  editNieuwsItem(nieuwsItemId) {
+  newNieuwsItem(nieuwsItem: NieuwsItem){
 
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    let body = JSON.stringify(nieuwsItem);
+    console.log(body);
+
+    let url = "http://localhost:3000/nieuwsItems";
+    console.log(url);
+    return this.http.post(url, body, options).map((res: Response) => res.json());
+  }
+
+  saveNieuwsItem(nieuwsItem: NieuwsItem, id:string){
+
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    let body = JSON.stringify(nieuwsItem);
+    console.log(body);
+
+    let url = "http://localhost:3000/nieuwsItems/"+id;
+    console.log(url);
+    return this.http.put(url, body, options).map((res: Response) => res.json());
   }
 }

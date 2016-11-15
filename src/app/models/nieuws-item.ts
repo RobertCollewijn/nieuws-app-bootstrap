@@ -10,6 +10,8 @@ export class NieuwsItem {
               public samenvattingNieuwsbrief: string,
               public afbeeldingIdNieuwsbrief: number,
               public bericht: string,
-              public afbeeldingen: number[]) {
+              public afbeeldingen: number[],
+              public isSaved: boolean
+  ) {
   }
 }
