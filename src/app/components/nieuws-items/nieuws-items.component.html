@@ -1,16 +1,16 @@
-<table>
-  <tr *ngFor="let nieuwsItem of nieuwsItems"
-      (click)="onSelect(nieuwsItem)">
-    <td>
-      "afbeelding"
-    </td>
-    <td>
-      {{nieuwsItem.titel}}
-    </td>
-    <td>
 
-    </td>
-  </tr>
-</table>
+<div class="row overzicht" *ngFor="let nieuwsItem of nieuwsItems"
+     (click)="onSelect(nieuwsItem)">
+  <div class="col-sm-2">
+    <img src="..." class="img-fluid img-overzicht" alt="afbeelding" style="height:120px;width:160px;">
+  </div>
+  <div class="col-sm-10">
+    <h2> {{nieuwsItem.titel}}</h2>
+    {{nieuwsItem.samenvattingOverzicht}}
+  </div>
+  <div>
+  </div>
+</div>
+<button class="btn btn-primary btn-circle" (click)="addNieuwsItem()"><i class="fa fa-plus" aria-hidden="true"></i>
+</button>
 
-<button class="btn btn-primary" (click)="addNieuwsItem()">Nieuw</button>
