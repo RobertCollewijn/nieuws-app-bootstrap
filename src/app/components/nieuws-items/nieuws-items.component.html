@@ -6,11 +6,17 @@
   </div>
   <div class="col-sm-10">
     <h2> {{nieuwsItem.titel}}</h2>
-    {{nieuwsItem.samenvattingOverzicht}}
+
+    <div [innerHTML]="nieuwsItem.samenvattingOverzicht"></div>
   </div>
   <div>
   </div>
 </div>
-<button class="btn btn-primary btn-circle" (click)="addNieuwsItem()"><i class="fa fa-plus" aria-hidden="true"></i>
-</button>
+<nav class="navbar navbar-fixed-bottom">
+  <div class="container">
+    <button class="btn btn-primary btn-circle pull-right" (click)="addNieuwsItem()"><i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+  </div>
+</nav>
+
 

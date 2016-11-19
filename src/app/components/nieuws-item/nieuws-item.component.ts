@@ -5,6 +5,7 @@ import {NieuwsItem} from "../../models/nieuws-item";
 import {Subscription, Observable} from "rxjs";
 import {FormGroup, Validators, FormBuilder, FormControl} from "@angular/forms";
 
+
 @Component({
   selector: 'app-nieuws-item',
   templateUrl: './nieuws-item.component.html',

@@ -14,9 +14,31 @@
   <textarea type="textarea" class="form-control" formControlName="samenvattingOverzicht" rows="6"></textarea>
 
 
-  <button class="btn btn-success btn-circle" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-  <button class="btn btn-danger btn-circle" (click)="deleteNieuwsItem()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+
+
+
+
+<nav class="navbar navbar-fixed-bottom">
+  <div class="container">
+
+    <button class="btn btn-danger btn-circle pull-right" (click)="deleteNieuwsItem()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    <button class="btn btn-success btn-circle pull-right" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+  </div>
+
+</nav>
 </form>
+
+<ckeditor
+  [(ngModel)]="samenvattingOverzicht"
+  [config]="{uiColor: '#99000'}"
+  (change)="onChange($event)"
+  (ready)="onReady($event)"
+  (blur)="onBlur($event)"
+  debounce="500">
+</ckeditor>
+
+
 
 
 
