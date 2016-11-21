@@ -10,33 +10,70 @@
   </div>
 
   <label>Samenvattig overzicht:</label>
+  <ckeditor id="samenvattingOverzicht"
+            formControlName="samenvattingOverzicht"
 
-  <textarea type="textarea" class="form-control" formControlName="samenvattingOverzicht" rows="6"></textarea>
+            [config]=" {toolbarGroups : [
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }],
+		removeButtons : 'Underline'
+		}"
+            rows="2" cols="80"
+            debounce="500">
+  </ckeditor>
 
 
+  <label>Samenvattig nieuwsbrief:</label>
+
+  <ckeditor id="samenvattingNieuwsbrief"
+            formControlName="samenvattingNieuwsbrief"
+
+            [config]=" {toolbarGroups : [
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }],
+		removeButtons : 'Underline'
+		}"
+            rows="2" cols="80"
+            debounce="500">
+  </ckeditor>
+
+  <label>Bericht:</label>
+
+  <ckeditor id="bericht"
+            formControlName="bericht"
+
+            [config]=" {toolbarGroups : [
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }],
+		removeButtons : 'Underline'
+		}"
+            rows="2" cols="80"
+            debounce="500">
+  </ckeditor>
 
 
+  <nav class="navbar navbar-fixed-bottom">
+    <div class="container">
 
+      <button class="btn btn-danger btn-circle pull-right" (click)="deleteNieuwsItem()"><i class="fa fa-trash-o"
+                                                                                           aria-hidden="true"></i>
+      </button>
+      <button class="btn btn-success btn-circle pull-right" type="submit"><i class="fa fa-floppy-o"
+                                                                             aria-hidden="true"></i></button>
+    </div>
 
-
-<nav class="navbar navbar-fixed-bottom">
-  <div class="container">
-
-    <button class="btn btn-danger btn-circle pull-right" (click)="deleteNieuwsItem()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-    <button class="btn btn-success btn-circle pull-right" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-  </div>
-
-</nav>
+  </nav>
 </form>
 
-<ckeditor
-  [(ngModel)]="samenvattingOverzicht"
-  [config]="{uiColor: '#99000'}"
-  (change)="onChange($event)"
-  (ready)="onReady($event)"
-  (blur)="onBlur($event)"
-  debounce="500">
-</ckeditor>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

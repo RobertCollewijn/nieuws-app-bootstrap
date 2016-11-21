@@ -23,7 +23,13 @@ export class NieuwsItemComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private nieuwsItemService: NieuwsItemsService) {
 
+    this.myForm = new FormGroup({
+      titel: new FormControl('titel', [<any>Validators.required, <any>Validators.minLength(5)]),
+      samenvattingOverzicht: new FormControl(('samenvattingOverzicht')),
+      samenvattingNieuwsbrief: new FormControl(('samenvattingNieuwsbrief')),
+      bericht: new FormControl(('bericht'))
 
+    });
 
     setTimeout(()=> {
 
@@ -43,11 +49,19 @@ export class NieuwsItemComponent implements OnInit {
             (<FormControl>this.myForm.controls['samenvattingOverzicht'])
               .setValue(this.nieuwsItem.samenvattingOverzicht, {onlySelf: true});
 
+            (<FormControl>this.myForm.controls['samenvattingNieuwsbrief'])
+              .setValue(this.nieuwsItem.samenvattingNieuwsbrief, {onlySelf: true});
+
+            (<FormControl>this.myForm.controls['bericht'])
+              .setValue(this.nieuwsItem.bericht, {onlySelf: true});
+
             this.myForm.valueChanges
               .subscribe(
                 formValue => {
                   this.nieuwsItem.titel = formValue.titel,
-                    this.nieuwsItem.samenvattingOverzicht = formValue.samenvattingOverzicht
+                    this.nieuwsItem.samenvattingOverzicht = formValue.samenvattingOverzicht ,
+                    this.nieuwsItem.samenvattingNieuwsbrief = formValue.samenvattingNieuwsbrief,
+                    this.nieuwsItem.bericht = formValue.bericht
                 }
               );
             //(<FormControl>this.myForm).setValue(this.nieuwsItem,{onlySelf: true});
@@ -81,11 +95,19 @@ console.log("error: "+ error.statusText)
             (<FormControl>this.myForm.controls['samenvattingOverzicht'])
               .setValue(this.nieuwsItem.samenvattingOverzicht, {onlySelf: true});
 
+            (<FormControl>this.myForm.controls['samenvattingNieuwsbrief'])
+              .setValue(this.nieuwsItem.samenvattingNieuwsbrief, {onlySelf: true});
+
+            (<FormControl>this.myForm.controls['bericht'])
+              .setValue(this.nieuwsItem.bericht, {onlySelf: true});
+
             this.myForm.valueChanges
               .subscribe(
                 formValue => {
                   this.nieuwsItem.titel = formValue.titel,
-                    this.nieuwsItem.samenvattingOverzicht = formValue.samenvattingOverzicht
+                    this.nieuwsItem.samenvattingOverzicht = formValue.samenvattingOverzicht,
+                    this.nieuwsItem.samenvattingNieuwsbrief = formValue.samenvattingNieuwsbrief,
+                    this.nieuwsItem.bericht = formValue.bericht
                 }
               );
 
@@ -98,11 +120,7 @@ console.log("error: "+ error.statusText)
 
   ngOnInit() {
     console.log("ngOnInit")
-    this.myForm = new FormGroup({
-      titel: new FormControl('titel', [<any>Validators.required, <any>Validators.minLength(5)]),
-      samenvattingOverzicht: new FormControl(('samenvattingOverzicht'))
-
-    });
+    
 
   }
 

@@ -1,0 +1,51 @@
+{
+  "nieuwsItems": [
+    {
+      "id": "1",
+      "status": "",
+      "auteur": "Arjen Jorritsma",
+      "datum": "2016-07-01T12:00:00.000Z",
+      "afbeeldingIdOverzicht": 1,
+      "afbeeldingIdNieuwsbrief": 2,
+      "afbeeldingen": [
+        3,
+        4,
+        5
+      ],
+      "isSaved": true
+    },
+    {
+      "id": "2",
+      "status": "",
+      "auteur": "Johan Sikken",
+      "datum": "2016-07-01T11:00:00.000Z",
+      "afbeeldingIdOverzicht": 11,
+      "samenvattingNieuwsbrief": "<p>Wij bevinden ons op dit moment in een roerige tijd wat betreft de opbrengstprijzen voor landbouwproducten. Veel aan de landbouw gerelateerde bedrijven en organisaties menen de markt voor landbouwproducten te kunnen voorspellen. Met verschillende rekenmodellen komen er evenzoveel uitkomsten uit die achteraf vaak toch niet blijken uit te komen.</p>",
+      "afbeeldingIdNieuwsbrief": 12,
+      "bericht": "<p>Wij bevinden ons op dit moment in een roerige tijd wat betreft de opbrengstprijzen voor landbouwproducten. Veel aan de landbouw gerelateerde bedrijven en organisaties menen de markt voor landbouwproducten te kunnen voorspellen. Met verschillende rekenmodellen komen er evenzoveel uitkomsten uit die achteraf vaak toch niet blijken uit te komen.</p>",
+      "afbeeldingen": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "isSaved": true
+    },
+    {
+      "id": "3",
+      "titel": "tesatg asd gfasmatter",
+      "status": "concept",
+      "auteur": "",
+      "datum": "2016-11-18T10:37:59.063Z",
+      "samenvattingOverzicht": " asdg",
+      "afbeeldingIdOverzicht": 0,
+      "samenvattingNieuwsbrief": "",
+      "afbeeldingIdNieuwsbrief": 0,
+      "bericht": "",
+      "afbeeldingen": [
+        0
+      ],
+      "isSaved": true
+    }
+  ]
+}
